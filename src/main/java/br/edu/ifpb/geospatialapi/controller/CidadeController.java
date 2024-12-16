@@ -92,4 +92,17 @@ public class CidadeController {
         }
     }
 
+    @GetMapping("/buscar-por-raio")
+    public ResponseEntity<List<Cidade>> buscarCidadesPorRaio(
+            @RequestParam double latitude,
+            @RequestParam double longitude,
+            @RequestParam(defaultValue = "1000000") double raio) {  // Raio padrão de 1.000.000 metros (1.000 km)
+        try {
+            List<Cidade> cidades = cidadeService.buscarCidadesPorRaio(latitude, longitude, raio);
+            return ResponseEntity.ok(cidades);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).build();  // Retorna erro 500 em caso de erro inesperado
+        }
+    }
+
 }

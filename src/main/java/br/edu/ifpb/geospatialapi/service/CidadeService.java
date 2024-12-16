@@ -42,4 +42,8 @@ public class CidadeService {
         return false;
     }
 
+    public List<Cidade> buscarCidadesPorRaio(double latitude, double longitude, double raio) {
+        return cidadeRepository.findCidadesWithinRadius(latitude, longitude, raio);
+    }
+
 }
