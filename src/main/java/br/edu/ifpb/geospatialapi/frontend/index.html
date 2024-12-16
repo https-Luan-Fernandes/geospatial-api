@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Cidades</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Gerenciar Cidades</h1>
+
+    <!-- Buscar Cidades por Raio -->
+    <section id="buscar-por-raio">
+        <h2>Buscar Cidades por Raio</h2>
+        <form id="form-busca">
+            <label for="latitude">Latitude:</label>
+            <input type="number" id="latitude" placeholder="Ex: -23.5505" required>
+
+            <label for="longitude">Longitude:</label>
+            <input type="number" id="longitude" placeholder="Ex: -46.6333" required>
+
+            <label for="raio">Raio (em metros):</label>
+            <input type="number" id="raio" value="1000000" required>
+
+            <button type="submit">Buscar</button>
+        </form>
+
+        <div id="resultados">
+            <h3>Resultado da Busca</h3>
+            <ul id="lista-cidades"></ul>
+        </div>
+    </section>
+
+    <!-- Criar Cidade -->
+    <section id="criar-cidade">
+        <h2>Criar Cidade</h2>
+        <form id="form-criar-cidade">
+            <label for="nome">Nome da Cidade:</label>
+            <input type="text" id="nome" placeholder="Nome da cidade" required>
+
+            <label for="coordenada">Coordenada (latitude,longitude):</label>
+            <input type="text" id="coordenada" placeholder="Ex: -23.5505,-46.6333" required>
+
+            <button type="submit">Criar Cidade</button>
+        </form>
+    </section>
+
+    <!-- Obter Cidade por ID -->
+    <section id="obter-cidade">
+        <h2>Obter Cidade por ID</h2>
+        <form id="form-obter-cidade">
+            <label for="cidade-id">ID da Cidade:</label>
+            <input type="number" id="cidade-id" placeholder="ID da cidade" required>
+            <button type="submit">Buscar Cidade</button>
+        </form>
+        <div id="cidade-resultado">
+            <h3>Resultado da Cidade</h3>
+            <p id="cidade-info"></p>
+        </div>
+    </section>
+
+    <!-- Atualizar Cidade -->
+    <section id="atualizar-cidade">
+        <h2>Atualizar Cidade</h2>
+        <form id="form-atualizar-cidade">
+            <label for="cidade-id-atualizar">ID da Cidade:</label>
+            <input type="number" id="cidade-id-atualizar" placeholder="ID da cidade" required>
+
+            <label for="nome-atualizar">Nome da Cidade:</label>
+            <input type="text" id="nome-atualizar" placeholder="Nome da cidade" required>
+
+            <label for="coordenada-atualizar">Coordenada (latitude,longitude):</label>
+            <input type="text" id="coordenada-atualizar" placeholder="Ex: -23.5505,-46.6333" required>
+
+            <button type="submit">Atualizar Cidade</button>
+        </form>
+    </section>
+
+    <!-- Deletar Cidade -->
+    <section id="deletar-cidade">
+        <h2>Deletar Cidade</h2>
+        <form id="form-deletar-cidade">
+            <label for="cidade-id-deletar">ID da Cidade:</label>
+            <input type="number" id="cidade-id-deletar" placeholder="ID da cidade" required>
+
+            <button type="submit">Deletar Cidade</button>
+        </form>
+    </section>
+
+    <!-- Verificar se Cidade está dentro de um Polígono -->
+    <section id="verificar-poligono">
+        <h2>Verificar Cidade Dentro de Polígono</h2>
+        <form id="form-verificar-poligono">
+            <label for="cidade-id-poligono">ID da Cidade:</label>
+            <input type="number" id="cidade-id-poligono" placeholder="ID da cidade" required>
+
+            <label for="wkt-poligono">Polígono (WKT):</label>
+            <input type="text" id="wkt-poligono" placeholder="Ex: POLYGON((...))" required>
+
+            <button type="submit">Verificar</button>
+        </form>
+        <div id="verificar-resultado">
+            <h3>Resultado da Verificação</h3>
+            <p id="resultado-poligono"></p>
+        </div>
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

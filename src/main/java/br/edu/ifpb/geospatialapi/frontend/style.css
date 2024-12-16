@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightgray;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color:  #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+section {
+    width: 48%; /* Ajuste na largura das seções */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+section:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 16px;
+    color: #555;
+}
+
+input[type="number"], input[type="text"] {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+}
+
+input[type="number"]:focus, input[type="text"]:focus {
+    border-color: #4CAF50;
+}
+
+button {
+    padding: 12px;
+    background-color: #3e3efd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #21218f;
+}
+
+#resultados, #verificar-resultado {
+    margin-top: 30px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    padding: 12px;
+    margin: 10px 0;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* As seções se empilham verticalmente */
+        width: 100%; /* Largura da container */
+    }
+
+    section {
+        width: 100%; /* As seções ocupam toda a largura */
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    input[type="number"], input[type="text"], button {
+        font-size: 14px;
+    }
+}
